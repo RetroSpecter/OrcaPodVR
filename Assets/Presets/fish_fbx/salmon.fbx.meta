@@ -1,0 +1,192 @@
+fileFormatVersion: 2
+guid: a871c33561ed94a429e6edbb7fac2f2f
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: center_adipose_fin_1_bind_joint
+    100002: center_adipose_fin_end_joint
+    100004: center_dorsal_fin_1_bind_joint
+    100006: center_dorsal_fin_2_bind_joint
+    100008: center_dorsal_fin_end_joint
+    100010: center_head_1_bind_joint
+    100012: center_head_end_joint
+    100014: center_jaw_1_bind_joint
+    100016: center_jaw_end_joint
+    100018: center_neck_1_bind_joint
+    100020: center_rear_fin_1_bind_joint
+    100022: center_rear_fin_2_bind_joint
+    100024: center_rear_fin_end_joint
+    100026: center_root_bind_joint
+    100028: center_spine_1_bind_joint
+    100030: center_spine_2_bind_joint
+    100032: center_spine_3_bind_joint
+    100034: center_tail_1_bind_joint
+    100036: center_tail_2_bind_joint
+    100038: center_tail_3_bind_joint
+    100040: center_tail_4_bind_joint
+    100042: center_tail_fin_1_bind_joint
+    100044: center_tail_fin_2_bind_joint
+    100046: center_tail_fin_3_bind_joint
+    100048: center_tail_fin_end_joint
+    100050: chinook_salmon
+    100052: left_eye_bind_joint
+    100054: left_eye_end_joint
+    100056: left_pectoral_fin_1_bind_joint
+    100058: left_pectoral_fin_2_bind_joint
+    100060: left_pectoral_fin_3_bind_joint
+    100062: left_pectoral_fin_end_joint
+    100064: left_pelvic_fin_1_bind_joint
+    100066: left_pelvic_fin_2_bind_joint
+    100068: left_pelvic_fin_3_bind_joint
+    100070: left_pelvic_fin_end_joint
+    100072: right_eye_bind_joint
+    100074: right_eye_end_joint
+    100076: right_pectoral_fin_1_bind_joint
+    100078: right_pectoral_fin_2_bind_joint
+    100080: right_pectoral_fin_3_bind_joint
+    100082: right_pectoral_fin_end_joint
+    100084: right_pelvic_fin_1_bind_joint
+    100086: right_pelvic_fin_2_bind_joint
+    100088: right_pelvic_fin_3_bind_joint
+    100090: right_pelvic_fin_end_joint
+    100092: //RootNode
+    100094: salmon_root_bind_joint
+    400000: center_adipose_fin_1_bind_joint
+    400002: center_adipose_fin_end_joint
+    400004: center_dorsal_fin_1_bind_joint
+    400006: center_dorsal_fin_2_bind_joint
+    400008: center_dorsal_fin_end_joint
+    400010: center_head_1_bind_joint
+    400012: center_head_end_joint
+    400014: center_jaw_1_bind_joint
+    400016: center_jaw_end_joint
+    400018: center_neck_1_bind_joint
+    400020: center_rear_fin_1_bind_joint
+    400022: center_rear_fin_2_bind_joint
+    400024: center_rear_fin_end_joint
+    400026: center_root_bind_joint
+    400028: center_spine_1_bind_joint
+    400030: center_spine_2_bind_joint
+    400032: center_spine_3_bind_joint
+    400034: center_tail_1_bind_joint
+    400036: center_tail_2_bind_joint
+    400038: center_tail_3_bind_joint
+    400040: center_tail_4_bind_joint
+    400042: center_tail_fin_1_bind_joint
+    400044: center_tail_fin_2_bind_joint
+    400046: center_tail_fin_3_bind_joint
+    400048: center_tail_fin_end_joint
+    400050: chinook_salmon
+    400052: left_eye_bind_joint
+    400054: left_eye_end_joint
+    400056: left_pectoral_fin_1_bind_joint
+    400058: left_pectoral_fin_2_bind_joint
+    400060: left_pectoral_fin_3_bind_joint
+    400062: left_pectoral_fin_end_joint
+    400064: left_pelvic_fin_1_bind_joint
+    400066: left_pelvic_fin_2_bind_joint
+    400068: left_pelvic_fin_3_bind_joint
+    400070: left_pelvic_fin_end_joint
+    400072: right_eye_bind_joint
+    400074: right_eye_end_joint
+    400076: right_pectoral_fin_1_bind_joint
+    400078: right_pectoral_fin_2_bind_joint
+    400080: right_pectoral_fin_3_bind_joint
+    400082: right_pectoral_fin_end_joint
+    400084: right_pelvic_fin_1_bind_joint
+    400086: right_pelvic_fin_2_bind_joint
+    400088: right_pelvic_fin_3_bind_joint
+    400090: right_pelvic_fin_end_joint
+    400092: //RootNode
+    400094: salmon_root_bind_joint
+    2100000: salmon_mat
+    4300000: chinook_salmon
+    9500000: //RootNode
+    13700000: chinook_salmon
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: salmon_mat
+    second: {fileID: 2100000, guid: b08a2afb0690cfe4fa479f0da078346e, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
