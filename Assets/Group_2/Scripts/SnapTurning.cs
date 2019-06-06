@@ -15,7 +15,7 @@ public class SnapTurning : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 xy = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick);
+        Vector2 xy = OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick);
         //print((Mathf.Abs(xy.x) - 1) + " " + (Mathf.Abs(Mathf.Abs(xy.x) - 1) < 0.01));
         if (!(Mathf.Abs(Mathf.Abs(xy.x) - 1) < 0.1))
         {
@@ -23,7 +23,6 @@ public class SnapTurning : MonoBehaviour
         }
         if (!prev && (Mathf.Abs(Mathf.Abs(xy.x) - 1) < 0.1))
         {
-            print("snap");
             prev = true;
             transform.Rotate(new Vector3(0, 40 * Mathf.Sign(xy.x), 0), Space.World);
         }

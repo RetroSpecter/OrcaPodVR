@@ -14,7 +14,7 @@ namespace VRStandardAssets.Utils
 
         [SerializeField] private Transform m_Camera;
         [SerializeField] private LayerMask m_ExclusionLayers;           // Layers to exclude from the raycast.
-        [SerializeField] private Reticle m_Reticle;                     // The reticle, if applicable.
+        [SerializeField] private ReticleTahlequah m_Reticle;                     // The reticle, if applicable.
         [SerializeField] private VRInput m_VrInput;                     // Used to call input based events on the current VRInteractiveItem.
         [SerializeField] private bool m_ShowDebugRay;                   // Optionally show the debug ray.
         [SerializeField] private float m_DebugRayLength = 5f;           // Debug ray length.

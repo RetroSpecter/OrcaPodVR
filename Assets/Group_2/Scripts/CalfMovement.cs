@@ -39,7 +39,7 @@ public class CalfMovement : MonoBehaviour
     
     public Vector3 getPositionOnSpline()
     {
-        float dt = parent.GetComponent<SplineWalker>().getProperTimeProgressive(-1, false);
+        float dt = parent.GetComponent<SplineWalker>().getProperTimeProgressive(-1.5f, false);
         return spline.GetPoint(parent.GetComponent<SplineWalker>().progress + dt);
         
     }
@@ -53,14 +53,15 @@ public class CalfMovement : MonoBehaviour
     public void lookAtParent()
     {
         float angularSpeed = 2;
+        /*
         if (blend == 1)
         {
             transform.forward = Vector3.RotateTowards(transform.forward, getDirectionOnSpline(), angularSpeed * Time.deltaTime, 0);
         } else
         {
             transform.forward = Vector3.RotateTowards(transform.forward, parent.transform.position - transform.position, angularSpeed * Time.deltaTime, 0);
-        }
-        
+        }*/
+        transform.forward = Vector3.RotateTowards(transform.forward, parent.transform.position - transform.position, angularSpeed * Time.deltaTime, 0);
 
         // positive - counterclockwise, negative - clockwise
         Vector3 toParent = parent.transform.position - transform.position;

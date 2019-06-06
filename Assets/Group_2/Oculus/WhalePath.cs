@@ -167,6 +167,7 @@ public class WhalePath : MonoBehaviour
         {
             anim.SetBool("Swim", false);
             anim.SetBool("DoSpyHopping", true);
+            calf.GetComponent<Animator>().SetBool("DoSpyhopping", true);
             print("end:" + end);
             UpdateUIArrive();
             end = true;
