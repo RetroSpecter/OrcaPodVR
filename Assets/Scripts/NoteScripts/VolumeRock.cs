@@ -22,10 +22,10 @@ public class VolumeRock : MonoBehaviour
     [Header("Sequence Recognition Stuff")]
     public float lengthError = 0.2f;
     public float sequenceRecognitionWaitTime = 0.5f;
-    public string[] sequenceTimes;
+
 
     private IEnumerator CurMonitorVolume;
-    private voiceNode voiceSequences;
+    public float voiceLength = 1;
 
     [Header("PlaySettings")]
     public string changeSound;
@@ -35,15 +35,6 @@ public class VolumeRock : MonoBehaviour
     {
         cam = Camera.main;
         mat = imagePlane.GetComponent<Renderer>().material;
-        voiceSequences = new voiceNode();
-        foreach (string s in sequenceTimes) {
-            string[] stringSequence = s.Split(',');
-            Queue<float> numSequence = new Queue<float>();
-            for (int i = 0; i < stringSequence.Length; i++) {
-                numSequence.Enqueue(float.Parse(stringSequence[i]));
-            }
-            voiceSequences.addNode(numSequence);
-        }
     }
 
     private void Update()
@@ -85,28 +76,14 @@ public class VolumeRock : MonoBehaviour
     }
 
     IEnumerator VoiceSequenceRecognition(float waitTime) {
-        float timeLeft = 0;
-        voiceNode curDict = voiceSequences;
-        while (timeLeft < waitTime) {
-            if (curVolume > volumeThreshold) {
-                float t = 0;
-                yield return StartCoroutine(GetSoundLength(volumeThreshold, value => t = value));
-                curDict = curDict.getNextNode(t, lengthError);
-                print(t);
-                if (curDict == null) {
-                    break;
-                }
-                timeLeft = 0;
-            }
-            timeLeft += Time.deltaTime;
-            yield return null;
-        }
-        print(curDict != null && curDict.isLeaf());
-        if (curDict != null && curDict.isLeaf())
+        float t = 0;
+        yield return StartCoroutine(GetSoundLength(volumeThreshold, value => t = value));
+
+        if (t + lengthError > voiceLength)
         {
             PlayRock();
-        }
-        else {
+        } else if ((t / voiceLength) > 0.2f)
+        {
             AnimatorHandler.instance.ActivateTriggers("try again");
         }
     }
@@ -115,16 +92,22 @@ public class VolumeRock : MonoBehaviour
         float t = 0;
         while (curVolume > volThresh) {
             t += Time.deltaTime;
+
+
+            if (mat != null)
+                mat.SetFloat("_volume_slider", t/voiceLength);
+
             yield return null;
         }
 
+        if (mat != null)
+            mat.SetFloat("_volume_slider", 0);
         time(t);
     }
 
+    private float curLength = 0;
     public void updateSound(float volume) {
         curVolume = Mathf.Lerp(curVolume, volume, Time.deltaTime * dampenVolume);
-        if(mat != null)
-            mat.SetFloat("_volume_slider", curVolume/0.75f);
     }
 }
 
