@@ -30,6 +30,10 @@ public class EventManager : MonoBehaviour {
 
         dict[name].eventCall.Invoke();
     }
+
+    public void CallTransition(string name) {
+        SceneTransitions.instance.Transition(name);
+    }
 }
 
 [System.Serializable]

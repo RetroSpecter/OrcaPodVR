@@ -44,6 +44,7 @@ public class SceneTransitions : MonoBehaviour
     }
 
     public void Transition(string name) {
+        print(name);
         SceneManager.LoadScene(name);
     }
 }

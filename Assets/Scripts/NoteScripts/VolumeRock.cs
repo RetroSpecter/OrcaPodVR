@@ -21,9 +21,6 @@ public class VolumeRock : MonoBehaviour
 
     [Header("Sequence Recognition Stuff")]
     public float lengthError = 0.2f;
-    public float sequenceRecognitionWaitTime = 0.5f;
-
-
     private IEnumerator CurMonitorVolume;
     public float voiceLength = 1;
 
@@ -68,7 +65,7 @@ public class VolumeRock : MonoBehaviour
         }
         while (true) {
             if (curVolume > volumeThreshold) {
-                yield return StartCoroutine(VoiceSequenceRecognition(sequenceRecognitionWaitTime));
+                yield return StartCoroutine(VoiceSequenceRecognition(0.25f));
             } 
 
             yield return null;
