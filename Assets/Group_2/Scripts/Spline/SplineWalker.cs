@@ -44,7 +44,7 @@ public class SplineWalker : MonoBehaviour
         GetComponent<Rigidbody>().MovePosition(position);
         if (lookForward)
         {
-            float angularSpeed = 3 * speed / maxSpeed;
+            float angularSpeed = 4 * speed / maxSpeed;
             transform.forward = Vector3.RotateTowards(transform.forward, spline.GetDirection(progress), angularSpeed * Time.deltaTime, 0);
             Vector3 toDummy = dummy.transform.position - transform.position;
             // positive - counterclockwise, negative - clockwise

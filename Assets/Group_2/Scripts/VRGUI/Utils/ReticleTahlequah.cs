@@ -68,15 +68,16 @@ namespace VRStandardAssets.Utils
         public void SetPosition (RaycastHit hit)
         {
             m_ReticleTransform.position = hit.point;
+            print("set reticle");
             m_ReticleTransform.localScale = m_OriginalScale * hit.distance;
-            
+
             // If the reticle should use the normal of what has been hit...
             if (m_UseNormal)
                 // ... set it's rotation based on it's forward vector facing along the normal.
-                m_ReticleTransform.rotation = Quaternion.FromToRotation (Vector3.forward, hit.normal);
+                m_ReticleTransform.rotation = Quaternion.FromToRotation(Vector3.forward, hit.normal);
             else
                 // However if it isn't using the normal then it's local rotation should be as it was originally.
-                m_ReticleTransform.localRotation = m_OriginalRotation;
+                m_ReticleTransform.forward = (m_Camera.position - m_ReticleTransform.position).normalized;
         }
     }
 }
