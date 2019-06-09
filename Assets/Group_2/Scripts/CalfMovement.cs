@@ -7,10 +7,13 @@ public class CalfMovement : MonoBehaviour
     public BezierSpline spline;
     public GameObject parent;
     public GameObject damped;
+    public bool end;
 
     public float blend;
 
     private Animator anim;
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +26,7 @@ public class CalfMovement : MonoBehaviour
         bool parentSwim = parent.GetComponent<Animator>().GetBool("Swim");
         if (parentSwim)
         {
-            
+
             blend = Mathf.Clamp01(blend + Time.deltaTime / 3);
             anim.SetBool("Swim", true);
 
@@ -33,8 +36,12 @@ public class CalfMovement : MonoBehaviour
             blend = Mathf.Clamp01(blend - Time.deltaTime / 3);
             anim.SetBool("Swim", false);
         }
-        transform.position = Vector3.Lerp(damped.transform.position, getPositionOnSpline(), blend);
-        lookAtParent();
+        
+        if (!end)
+        {
+            transform.position = Vector3.Lerp(damped.transform.position, getPositionOnSpline(), blend);
+            lookAtParent();
+        }
     }
     
     public Vector3 getPositionOnSpline()
@@ -77,5 +84,25 @@ public class CalfMovement : MonoBehaviour
     {
         float speed = Random.Range(0.75f, 1.25f);
         anim.SetFloat("speed", speed);
+    }
+
+    public void finalPositionAdjustment()
+    {
+        StartCoroutine(positionAdjustment());
+    }
+
+    IEnumerator positionAdjustment()
+    {
+        print("adjusting");
+        float time = 0;
+        Vector3 dest = transform.position + new Vector3(0, 4, 0);
+        Vector3 origin = transform.position;
+        while (time < 5)
+        {
+            time += Time.deltaTime;
+            transform.position = Vector3.Lerp(origin, dest, (time / 5) * (time / 5));
+            yield return new WaitForEndOfFrame();
+        }
+        yield return null;
     }
 }
