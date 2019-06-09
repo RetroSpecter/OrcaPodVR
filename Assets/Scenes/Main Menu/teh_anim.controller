@@ -94,6 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetIndex: -1
   weight: 0
+  lookSwitch: 0
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
@@ -108,7 +109,7 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -136,6 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetIndex: -1
   weight: 0
+  lookSwitch: 0
 --- !u!1102 &557394887087308416
 AnimatorState:
   serializedVersion: 5

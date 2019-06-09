@@ -19,12 +19,20 @@ public class MusicRock : Interacatble {
     public selectionEvent play;
 
     public RockGlow rg;
+    public GameObject optionalText;
 
     public void ActivateRock(bool active) {
         if (active && this.active != null)
         {
+            if (optionalText != null) {
+                optionalText.SetActive(true);
+            }
             this.active();
         } else if (!active && this.deactive != null) {
+            if (optionalText != null)
+            {
+                optionalText.SetActive(false);
+            }
             rg.OnDeselected();
             this.deactive();
             StopAllCoroutines();
