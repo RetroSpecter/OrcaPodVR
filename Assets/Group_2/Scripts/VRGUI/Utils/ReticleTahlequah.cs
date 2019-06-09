@@ -68,7 +68,6 @@ namespace VRStandardAssets.Utils
         public void SetPosition (RaycastHit hit)
         {
             m_ReticleTransform.position = hit.point;
-            print("set reticle");
             m_ReticleTransform.localScale = m_OriginalScale * hit.distance;
 
             // If the reticle should use the normal of what has been hit...

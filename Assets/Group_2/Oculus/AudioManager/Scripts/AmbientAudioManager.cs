@@ -47,9 +47,10 @@ public class AmbientAudioManager : MonoBehaviour {
             {
                 pod.SetActive(true);
                 podStart = Time.time;
+                StartCoroutine(endGame(20));
+                masterUI.SetActive(false);
             }
-            StartCoroutine(endGame(10));
-            masterUI.SetActive(false);            
+                      
         }
 
         if (pod.active) {
