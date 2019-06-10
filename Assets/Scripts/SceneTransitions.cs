@@ -44,10 +44,44 @@ public class SceneTransitions : MonoBehaviour
     public void Transition() {
         ScenesPlayed[SceneManager.GetActiveScene().buildIndex-1] = true;
         SceneManager.LoadScene(0);
+        StartCoroutine(LoadYourAsyncScene(0));
     }
 
     public void Transition(string name) {
         print(name);
-        SceneManager.LoadScene(name);
+        StartCoroutine(LoadYourAsyncScene(name));
+    }
+
+    IEnumerator LoadYourAsyncScene(string target)
+    {
+        // The Application loads the Scene in the background as the current Scene runs.
+        // This is particularly good for creating loading screens.
+        // You could also load the Scene by using sceneBuildIndex. In this case Scene2 has
+        // a sceneBuildIndex of 1 as shown in Build Settings.
+
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(target);
+
+        // Wait until the asynchronous scene fully loads
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+    }
+
+
+    IEnumerator LoadYourAsyncScene(int target)
+    {
+        // The Application loads the Scene in the background as the current Scene runs.
+        // This is particularly good for creating loading screens.
+        // You could also load the Scene by using sceneBuildIndex. In this case Scene2 has
+        // a sceneBuildIndex of 1 as shown in Build Settings.
+
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(target);
+
+        // Wait until the asynchronous scene fully loads
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
     }
 }
