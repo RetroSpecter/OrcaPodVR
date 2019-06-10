@@ -7,8 +7,8 @@ public class SceneTransitions : MonoBehaviour
 {
 
     public static SceneTransitions instance;
-
-    void Start() {
+    public bool[] ScenesPlayed;
+    void Awake() {
         if (instance == null)
         {
             instance = this;
@@ -17,6 +17,8 @@ public class SceneTransitions : MonoBehaviour
         else {
             Destroy(this.gameObject);
         }
+
+        ScenesPlayed = new bool[3]; //Granny, Scarlet, Tahlequah
     }
 
     void Update()
@@ -40,6 +42,7 @@ public class SceneTransitions : MonoBehaviour
     }
 
     public void Transition() {
+        ScenesPlayed[SceneManager.GetActiveScene().buildIndex-1] = true;
         SceneManager.LoadScene(0);
     }
 
