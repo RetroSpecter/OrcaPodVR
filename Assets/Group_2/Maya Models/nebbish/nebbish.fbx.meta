@@ -6,7 +6,37 @@ ModelImporter:
   - first:
       74: 1827226128182048838
     second: Take 001
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: nebbish_nebbish_body_shader
+    second: {fileID: 2100000, guid: 85f131ab337e6174896230b043682320, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: nebbish_nebbish_eye_shader
+    second: {fileID: 2100000, guid: 72743f07f004de34e9f95516151809ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: nebbish_nebbish_face_shader
+    second: {fileID: 2100000, guid: 605858c86e86eb343b16d006026ac934, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: nebbish_nebbish_hair_shader
+    second: {fileID: 2100000, guid: e7a844e7db44dd54aa008313d2ef1a07, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: nebbish_nebbish_shorts_shader
+    second: {fileID: 2100000, guid: d46836aa7fff0df41878eaddd42d2b6a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: nebbish_nebbish_torn_scuba_suit_shader
+    second: {fileID: 2100000, guid: 72cdd295baf657a4692898d1ff61371a, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -92,7 +122,7 @@ ModelImporter:
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
-    normalImportMode: 0
+    normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
