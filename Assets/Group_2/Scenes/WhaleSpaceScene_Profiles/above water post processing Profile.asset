@@ -17,7 +17,7 @@ MonoBehaviour:
     overrideState: 1
     value: 0
   gradingMode:
-    overrideState: 0
+    overrideState: 1
     value: 1
   externalLut:
     overrideState: 0

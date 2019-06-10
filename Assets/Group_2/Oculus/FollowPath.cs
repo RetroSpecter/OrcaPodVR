@@ -124,6 +124,10 @@ public class FollowPath : MonoBehaviour
             // Check Collision
             if (!willCollide(move))
             {
+                if (target < 4)
+                {
+                    move.y = 0;
+                }
                 player.position += move * speed * Time.deltaTime;
             }
 
