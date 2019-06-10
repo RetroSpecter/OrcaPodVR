@@ -31,15 +31,16 @@ namespace VRStandardAssets.Utils
         [SerializeField] private float m_DoubleClickTime = 0.3f;    //The max time allowed between double clicks
         [SerializeField] private float m_SwipeWidth = 0.3f;         //The width of a swipe
 
-        
+
         private Vector2 m_MouseDownPosition;                        // The screen position of the mouse when Fire1 is pressed.
         private Vector2 m_MouseUpPosition;                          // The screen position of the mouse when Fire1 is released.
         private float m_LastMouseUpTime;                            // The time when Fire1 was last released.
         private float m_LastHorizontalValue;                        // The previous value of the horizontal axis used to detect keyboard swipes.
         private float m_LastVerticalValue;                          // The previous value of the vertical axis used to detect keyboard swipes.
 
+        private float OVR_PreviousTrigger;
 
-        public float DoubleClickTime{ get { return m_DoubleClickTime; } }
+        public float DoubleClickTime { get { return m_DoubleClickTime; } }
 
 
         private void Update()
@@ -53,24 +54,27 @@ namespace VRStandardAssets.Utils
             // Set the default swipe to be none.
             SwipeDirection swipe = SwipeDirection.NONE;
 
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetButtonDown("Fire1") || (OVR_PreviousTrigger < 0.5 && OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) > 0.5f))
             {
+                // Update OVR trigger value
+                OVR_PreviousTrigger = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger);
+
                 // When Fire1 is pressed record the position of the mouse.
                 m_MouseDownPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-            
+
                 // If anything has subscribed to OnDown call it.
                 if (OnDown != null)
                     OnDown();
             }
 
             // This if statement is to gather information about the mouse when the button is up.
-            if (Input.GetButtonUp ("Fire1"))
+            if (Input.GetButtonUp("Fire1"))
             {
                 // When Fire1 is released record the position of the mouse.
-                m_MouseUpPosition = new Vector2 (Input.mousePosition.x, Input.mousePosition.y);
+                m_MouseUpPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
 
                 // Detect the direction between the mouse positions when Fire1 is pressed and released.
-                swipe = DetectSwipe ();
+                swipe = DetectSwipe();
             }
 
             // If there was no swipe this frame from the mouse, check for a keyboard swipe.
@@ -82,8 +86,11 @@ namespace VRStandardAssets.Utils
                 OnSwipe(swipe);
 
             // This if statement is to trigger events based on the information gathered before.
-            if(Input.GetButtonUp ("Fire1"))
+            if (Input.GetButtonUp("Fire1") || (OVR_PreviousTrigger > 0.5 && OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger) < 0.5f))
             {
+                // Update OVR trigger value
+                OVR_PreviousTrigger = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger);
+
                 // If anything has subscribed to OnUp call it.
                 if (OnUp != null)
                     OnUp();
@@ -117,13 +124,13 @@ namespace VRStandardAssets.Utils
         }
 
 
-        private SwipeDirection DetectSwipe ()
+        private SwipeDirection DetectSwipe()
         {
             // Get the direction from the mouse position when Fire1 is pressed to when it is released.
             Vector2 swipeData = (m_MouseUpPosition - m_MouseDownPosition).normalized;
 
             // If the direction of the swipe has a small width it is vertical.
-            bool swipeIsVertical = Mathf.Abs (swipeData.x) < m_SwipeWidth;
+            bool swipeIsVertical = Mathf.Abs(swipeData.x) < m_SwipeWidth;
 
             // If the direction of the swipe has a small height it is horizontal.
             bool swipeIsHorizontal = Mathf.Abs(swipeData.y) < m_SwipeWidth;
@@ -149,14 +156,14 @@ namespace VRStandardAssets.Utils
         }
 
 
-        private SwipeDirection DetectKeyboardEmulatedSwipe ()
+        private SwipeDirection DetectKeyboardEmulatedSwipe()
         {
             // Store the values for Horizontal and Vertical axes.
-            float horizontal = Input.GetAxis ("Horizontal");
-            float vertical = Input.GetAxis ("Vertical");
+            float horizontal = Input.GetAxis("Horizontal");
+            float vertical = Input.GetAxis("Vertical");
 
             // Store whether there was horizontal or vertical input before.
-            bool noHorizontalInputPreviously = Mathf.Abs (m_LastHorizontalValue) < float.Epsilon;
+            bool noHorizontalInputPreviously = Mathf.Abs(m_LastHorizontalValue) < float.Epsilon;
             bool noVerticalInputPreviously = Mathf.Abs(m_LastVerticalValue) < float.Epsilon;
 
             // The last horizontal values are now the current ones.
@@ -182,7 +189,7 @@ namespace VRStandardAssets.Utils
             // If the swipe meets none of these requirements there is no swipe.
             return SwipeDirection.NONE;
         }
-        
+
 
         private void OnDestroy()
         {

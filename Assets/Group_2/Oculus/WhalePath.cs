@@ -165,12 +165,17 @@ public class WhalePath : MonoBehaviour
         }
         else
         {
-            anim.SetBool("Swim", false);
-            anim.SetBool("DoSpyHopping", true);
-            calf.GetComponent<Animator>().SetBool("DoSpyhopping", true);
-            print("end:" + end);
-            UpdateUIArrive();
-            end = true;
+            if (!anim.GetBool("DoSpyHopping"))
+            {
+                calf.GetComponent<CalfMovement>().finalPositionAdjustment();
+                anim.SetBool("Swim", false);
+                anim.SetBool("DoSpyHopping", true);
+                calf.GetComponent<Animator>().SetBool("DoSpyhopping", true);
+                calf.GetComponent<CalfMovement>().end = true;
+                UpdateUIArrive();
+                end = true;
+            }
+            
         }
         //anim.SetInteger("Target", target);
         anim.SetBool("Follow", false);

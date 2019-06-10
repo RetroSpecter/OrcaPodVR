@@ -69,7 +69,7 @@ public class FollowPath : MonoBehaviour
             startPoint = transform.position;
         }
         // used to be "if target < 5".
-        if (target == 6 || (!atTarget() && whale.GetComponent<WhalePath>().hasReached()))
+        if (whale.GetComponent<WhalePath>().end || (!atTarget() && whale.GetComponent<WhalePath>().hasReached()))
         {
             // For oculus input
             Vector2 xy = OVRInput.Get(OVRInput.RawAxis2D.LThumbstick);//SecondaryThumbstick);
@@ -124,6 +124,10 @@ public class FollowPath : MonoBehaviour
             // Check Collision
             if (!willCollide(move))
             {
+                if (target < 4)
+                {
+                    move.y = 0;
+                }
                 player.position += move * speed * Time.deltaTime;
             }
 

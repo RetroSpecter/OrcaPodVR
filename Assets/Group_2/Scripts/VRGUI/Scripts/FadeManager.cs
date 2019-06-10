@@ -32,8 +32,11 @@ namespace VRStandardAssets.Utils
 
         public void fadeOut()
         {
-            print("********");
-            whale.GetComponent<Animator>().SetBool("Start", true);
+            if (current == 1)
+            {
+                whale.GetComponent<Animator>().SetBool("Start", true);
+            }
+            
             GetComponent<UIFader>().startFadeOut(getCanvasGroup());
         }
 
