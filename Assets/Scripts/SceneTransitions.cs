@@ -25,7 +25,7 @@ public class SceneTransitions : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha0))
         {
-            SceneManager.LoadScene(0);
+            Transition();
         }
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
