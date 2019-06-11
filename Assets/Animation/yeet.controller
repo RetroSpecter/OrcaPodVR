@@ -3118,7 +3118,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Celebrate
+  m_Name: Watch Fish
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -3133,7 +3133,8 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 6c2ad91fe0400a64faa4a756dc9e849b, type: 2}
+  m_Motion: {fileID: 1827226128182048838, guid: d4ab193aaec512c4695f8d33106d99f0,
+    type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -3245,14 +3246,14 @@ AnimatorStateMachine:
   m_EntryTransitions:
   - {fileID: -1028000099348402308}
   m_StateMachineTransitions:
+  - first: {fileID: 1107829224643733378}
+    second: []
   - first: {fileID: 1107301733352278762}
     second:
     - {fileID: 1109408497246554372}
   - first: {fileID: 1107712554768221260}
     second:
     - {fileID: -4495104095571630246}
-  - first: {fileID: 1107829224643733378}
-    second: []
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 30, y: 10, z: 0}
   m_EntryPosition: {x: 40, y: 160, z: 0}
