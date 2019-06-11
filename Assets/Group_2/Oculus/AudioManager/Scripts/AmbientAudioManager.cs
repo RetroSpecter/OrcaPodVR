@@ -119,6 +119,6 @@ public class AmbientAudioManager : MonoBehaviour {
             colorGradingLayer.postExposure.Override(colorGradingLayer.postExposure.value + Time.deltaTime * 2);
             yield return new WaitForEndOfFrame();
         }
-        transitionHandler.Transition();
+        SceneTransitions.instance.Transition();
     }
 }

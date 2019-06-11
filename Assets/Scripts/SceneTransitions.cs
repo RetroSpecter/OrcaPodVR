@@ -29,21 +29,20 @@ public class SceneTransitions : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            SceneManager.LoadScene(1);
+            StartCoroutine(LoadYourAsyncScene(1));
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            SceneManager.LoadScene(2);
+            StartCoroutine(LoadYourAsyncScene(2));
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            SceneManager.LoadScene(3);
+            StartCoroutine(LoadYourAsyncScene(3));
         }
     }
 
     public void Transition() {
         ScenesPlayed[SceneManager.GetActiveScene().buildIndex-1] = true;
-        SceneManager.LoadScene(0);
         StartCoroutine(LoadYourAsyncScene(0));
     }
 
@@ -59,10 +58,8 @@ public class SceneTransitions : MonoBehaviour
         // You could also load the Scene by using sceneBuildIndex. In this case Scene2 has
         // a sceneBuildIndex of 1 as shown in Build Settings.
 
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(target);
-
-        // Wait until the asynchronous scene fully loads
-        while (!asyncLoad.isDone)
+        AsyncOperation lastLoad = SceneManager.LoadSceneAsync(target);
+        while (!lastLoad.isDone)
         {
             yield return null;
         }
@@ -76,10 +73,8 @@ public class SceneTransitions : MonoBehaviour
         // You could also load the Scene by using sceneBuildIndex. In this case Scene2 has
         // a sceneBuildIndex of 1 as shown in Build Settings.
 
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(target);
-
-        // Wait until the asynchronous scene fully loads
-        while (!asyncLoad.isDone)
+        AsyncOperation lastLoad = SceneManager.LoadSceneAsync(target);
+        while (!lastLoad.isDone)
         {
             yield return null;
         }
