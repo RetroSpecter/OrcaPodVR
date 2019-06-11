@@ -8,6 +8,7 @@ public class Fish_Gameobject_Behaviour : MonoBehaviour
 
 
     readonly int dropfish = Animator.StringToHash("dropFish");
+    readonly int makesmall = Animator.StringToHash("makesmall");
     Animator aniamtor;
     bool movedown = false, ismoveforward = false;
     public Transform pos; //pos2 ued by salmon 2&3
@@ -23,8 +24,6 @@ public class Fish_Gameobject_Behaviour : MonoBehaviour
         aniamtor = GetComponent<Animator>();
         rot = new Quaternion(0, 1.2f, 0, 0);
         pos2 = Camera.position;
-        if(!isone)
-            pos2.x += Random.Range(-1f, 1f);
     }
 
     // Update is called once per frame
@@ -67,5 +66,18 @@ public class Fish_Gameobject_Behaviour : MonoBehaviour
     public void moveforward()
     {
         ismoveforward = true;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("stoparea"))
+        {
+            ismoveforward = true;
+        }
+    }
+
+    public void scalechange()
+    {
+        aniamtor.SetTrigger(makesmall);
     }
 }

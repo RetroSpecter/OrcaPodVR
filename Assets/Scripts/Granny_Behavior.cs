@@ -12,7 +12,7 @@ public class Granny_Behavior : MonoBehaviour
     public Transform Camera;
     public GameObject salmon, salmon_2, salmon_3, round_fish, will_fish, fishbones,fishbones_player, pod, grannydouble, s1,s2; //s1,s1 salmonswim
     public Transform  fishpos, playrfishpos;
-    public ParticleSystem shuffleParticleLauncher;
+    public ParticleSystem shuffleParticleLauncher, fish_particle, burst;
 
     public ParticleSystem grannyBreath;
     public ParticleSystem fireworks;
@@ -31,6 +31,7 @@ public class Granny_Behavior : MonoBehaviour
     readonly int clap_t = Animator.StringToHash("clap_trigger");
     readonly int moveme = Animator.StringToHash("moveme");
     readonly int correct_fish = Animator.StringToHash("correct");
+    readonly int wrong_fish = Animator.StringToHash("wrong");
     float interim_time;
     bool isforward = false, isplayer = false;
     void Start()
@@ -43,6 +44,7 @@ public class Granny_Behavior : MonoBehaviour
         grannyCallUser.Stop();
         grannyBubbleSound.Stop();
         fireworks.Stop();
+        burst.Stop();
     }
 
     // Update is called once per frame
@@ -76,8 +78,6 @@ public class Granny_Behavior : MonoBehaviour
     public void Clap3()
     {
         salmon_3.SetActive(false);
-        round_fish.SetActive(false);
-        will_fish.SetActive(false);
         fish_st = FishState.EATEN;
         fishbones_burp();
         aniamtor.SetTrigger(correct_fish);
@@ -114,7 +114,7 @@ public class Granny_Behavior : MonoBehaviour
 
     IEnumerator Burp()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.5f);
         fishbones_player.GetComponent<Fishbones_behaviour>().Slideout();
     }
 
@@ -125,6 +125,22 @@ public class Granny_Behavior : MonoBehaviour
         grannyBreath.Play();
         grannyBubbleSound.Play();
         StartCoroutine("Wave");
+    }
+
+    public void wrongFish()
+    {
+        aniamtor.SetTrigger(wrong_fish);
+    }
+    public void burstFish()
+    {
+        round_fish.SetActive(false);
+        burst.Play();
+    }
+
+    public void disappearFish()
+    {
+        will_fish.GetComponent<Fish_Gameobject_Behaviour>().scalechange();
+        will_fish.gameObject.SetActive(false);
     }
 
     public void playheart()
@@ -140,6 +156,8 @@ public class Granny_Behavior : MonoBehaviour
         grannydouble.transform.rotation = gameObject.transform.rotation;
         gameObject.SetActive(false);
         grannydouble.SetActive(true);
+        fish_particle.Stop();
+        fish_particle.gameObject.SetActive(false);
     }
     /****************
         PARTICLES
