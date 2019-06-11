@@ -48,10 +48,12 @@ public class FollowPath : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // update vignette
         Vignette VignetteLayer = null;
         post.profile.TryGetSettings(out VignetteLayer);
         float amount = Mathf.Max(0, OVRInput.Get(OVRInput.RawAxis2D.LThumbstick).y);
-        VignetteLayer.intensity.value = initialVignette + amount / 2;
+        amount += Input.GetAxis("Vertical");
+        VignetteLayer.intensity.value = Mathf.Max(VignetteLayer.intensity.value - 1f * Time.deltaTime, initialVignette);
 
         /*if (target < 6)
         {
@@ -128,6 +130,11 @@ public class FollowPath : MonoBehaviour
                 {
                     move.y = 0;
                 }
+
+
+                post.profile.TryGetSettings(out VignetteLayer);
+                VignetteLayer.intensity.value = initialVignette + move.magnitude / speed / 4;
+
                 player.position += move * speed * Time.deltaTime;
             }
 
