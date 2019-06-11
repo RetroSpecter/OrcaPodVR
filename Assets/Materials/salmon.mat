@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: salmon
-  m_Shader: {fileID: -6465566751694194690, guid: d90a837ad21badf47b6d98b82e4ac3eb,
+  m_Shader: {fileID: -6465566751694194690, guid: e4152fe19f1ca5b44951d19d09f417ed,
     type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 2
@@ -26,6 +26,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - Texture2D_86792C36:
         m_Texture: {fileID: 2800000, guid: 6e6bfaf0a3638104da784f6b80309994, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_99857E3D:
+        m_Texture: {fileID: 2800000, guid: 2809ac2d97516b94eb44bbfc05fcead5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -72,15 +76,22 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_28FAD19E_Out:
+        m_Texture: {fileID: 2800000, guid: 2809ac2d97516b94eb44bbfc05fcead5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Texture2DAsset_EF2DA9FA_Out:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_1E5AF382: 0.13
+    - Vector1_2B3D4B9: 0.036
     - Vector1_3BE26971: 0
+    - Vector1_42183C3: 7.4
     - Vector1_81A9CCB4: 0.45
     - Vector1_BC1C5F9D: 0.5
+    - Vector1_D04C1C6: 0.295
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
