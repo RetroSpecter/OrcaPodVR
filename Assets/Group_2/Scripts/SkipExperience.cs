@@ -44,7 +44,7 @@ public class SkipExperience : MonoBehaviour
                 colorGradingLayer.postExposure.Override(colorGradingLayer.postExposure.value + Time.deltaTime * 2);
                 yield return new WaitForEndOfFrame();
             }
-            GetComponent<SceneTransitions>().Transition();
+            SceneTransitions.instance.Transition();
         }
     }
 }

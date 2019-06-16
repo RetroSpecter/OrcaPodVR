@@ -78,7 +78,7 @@ public class VolumeRock : MonoBehaviour
 
         if (t + lengthError > voiceLength) {
             PlayRock();
-        } else if (((t + lengthError) / voiceLength) > 0.1f) {
+        } else if ((t / voiceLength) > 0.2f) {
             AnimatorHandler.instance.ActivateTriggers("try again");
         }
     }
@@ -90,7 +90,7 @@ public class VolumeRock : MonoBehaviour
 
 
             if (mat != null)
-                mat.SetFloat("_volume_slider", (t + 0.1f)/voiceLength);
+                mat.SetFloat("_volume_slider", t/voiceLength);
 
             yield return null;
         }
