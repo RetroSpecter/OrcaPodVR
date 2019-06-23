@@ -23,15 +23,12 @@ public class VolumeRock : MonoBehaviour
     private Material mat;
 
     [Header("Activation Settings")]
-    private Camera cam;
+    protected Camera cam;
 
     [Tooltip("The minimum angle the camera has to be facing towards the rock in order to register if its singing")]
     // this is essentially to prevent the player from registering the rock when they are facing away
     public float visionRadius = 45;
     private float angleRadius;
-
-    [Tooltip("The minimum distance the camera and the rock to register if they are singing")]
-    public float minimumDistance= 10000;
 
     [Header("Sequence Recognition Stuff")]
     public float lengthError = 0.2f;
@@ -75,9 +72,9 @@ public class VolumeRock : MonoBehaviour
 
     // makes sure the player is facing towards the rock a certain angle and is close enough to the rock
     // to actually register singing
-    public bool canRegisterSinging() {
+    public virtual bool canRegisterSinging() {
         Vector3 angleToCam = transform.position - cam.transform.position;
-        return Vector3.Angle(cam.transform.forward, angleToCam) < visionRadius && angleToCam.magnitude < minimumDistance;
+        return Vector3.Angle(cam.transform.forward, angleToCam) < visionRadius;
     }
 
     // activates the success action (fish swimming, scarlet doing animations, etc)

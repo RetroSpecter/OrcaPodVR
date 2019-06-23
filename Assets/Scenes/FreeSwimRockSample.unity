@@ -3735,7 +3735,6 @@ MonoBehaviour:
   volumeThreshold: 0.1
   imagePlane: {fileID: 262631940}
   visionRadius: 45
-  minimumDistance: 10000
   lengthError: 0.3
   voiceLength: 1
   cameraSource: {fileID: 1511792330}
@@ -3779,7 +3778,9 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  minimumDistance: 8.64
   restartTime: 5
+  debugView: 1
 --- !u!4 &1541842381
 Transform:
   m_ObjectHideFlags: 0
