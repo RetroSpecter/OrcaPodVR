@@ -58,6 +58,8 @@ public class MusicRock : Interacatble {
     public override bool OnSelected(CameraRaycast camera)
     {
         return false;
+
+        // this stuff became defunt once we switched to voice controls
         if (!isActive) return false;
 
         if (select != null)
@@ -76,7 +78,7 @@ public class MusicRock : Interacatble {
             AnimatorHandler.instance.ActivateTriggers(triggerName);
         }
 
-        if (!soundName.Equals("")) {
+        if (!soundName.Equals("") && AudioManager.instance != null) {
             AudioManager.instance.Play(soundName);
         }
 
