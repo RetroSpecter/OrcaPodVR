@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tahlequah.unity
     guid: 25f09d2515d9d3e4c9c6d867c39fb5bb
+  - enabled: 0
+    path: Assets/Scenes/LoadingScreen.unity
+    guid: a92d1da4f0201b54da3a82e5afba5b3d
   m_configObjects: {}

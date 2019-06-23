@@ -5,7 +5,8 @@ Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: sea_urchin 2
   m_Shader: {fileID: 4800000, guid: f1091a5fddc930840b22bb11603dc576, type: 3}
   m_ShaderKeywords: 
@@ -63,9 +64,14 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_173119A4: 0.01
     - Vector1_222FC5F: 0.05
     - Vector1_2A8A29F8: -0.07
+    - Vector1_3FD3932D: 0.5
+    - Vector1_56AC0F25: 5
+    - Vector1_676A666E: 0.56
     - Vector1_9D4B8341: 1.89
+    - Vector1_AE85806A: 0.05
     - Vector1_B733207C: 0.1
     - Vector1_BDA3F216: 1.39
     - _AlphaClip: 0
@@ -89,8 +95,10 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
+    - Color_B5ADE586: {r: 0.8113208, g: 0.36356357, b: 0.5220302, a: 0}
     - Color_B773F8E8: {r: 0.6792453, g: 0.17579973, b: 0.048059803, a: 0}
     - Vector2_1800F3E2: {r: 0.5, g: 0.5, b: 0, a: 0}
+    - Vector2_9C962F0A: {r: 1, g: 1, b: 0, a: 0}
     - _Color: {r: 0.3795486, g: 0.14177644, b: 0.509434, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
