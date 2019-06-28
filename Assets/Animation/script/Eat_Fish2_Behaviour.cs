@@ -22,8 +22,6 @@ public class Eat_Fish2_Behaviour : StateMachineBehaviour {
         if ((Time.time - starttime) > 4.25)
         { 
             animator.GetComponent<Granny_Behavior>().hideSalmon();
-
-            animator.GetComponent<Granny_Behavior>().chewing.Play();
         }
     }
 
