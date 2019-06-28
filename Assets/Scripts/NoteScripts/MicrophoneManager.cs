@@ -52,5 +52,10 @@ public class MicrophoneManager : MonoBehaviour
     {
         curVolume = volume;
     }
+
+    public float getCurVolume()
+    {
+        return curVolume;
+    }
 }
 
