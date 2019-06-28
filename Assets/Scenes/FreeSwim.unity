@@ -6780,7 +6780,7 @@ GameObject:
   - component: {fileID: 107847271}
   - component: {fileID: 107847274}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: school_of_fish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
