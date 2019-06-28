@@ -21,27 +21,23 @@ public class GrabScript : MonoBehaviour
     }
     public void celebrate()
     {
-        if (gameObject.CompareTag("Salmon3"))
+        granny.GetComponent<Granny_Behavior>().EatenAndCelebration();
+
+        if (gameObject.CompareTag("salmon2"))
         {
-            granny.GetComponent<Granny_Behavior>().Clap3();
-            granny.GetComponent<Granny_Behavior>().chewing.Play();
-            granny.GetComponent<Granny_Behavior>().EatenAndCelebration();
+            granny.GetComponent<Granny_Behavior>().Clap2();
         }
         else if (gameObject.CompareTag("Fish"))
         {
-            granny.GetComponent<Granny_Behavior>().Clap2();
-            granny.GetComponent<Granny_Behavior>().chewing.Play();
-            granny.GetComponent<Granny_Behavior>().EatenAndCelebration();
+            granny.GetComponent<Granny_Behavior>().Clap3(1);
         }
         else if (gameObject.CompareTag("Fish1"))
         {
-            granny.GetComponent<Granny_Behavior>().wrongFish();
-            granny.GetComponent<Granny_Behavior>().burstFish();
+            granny.GetComponent<Granny_Behavior>().Clap3(2);
         }
         if (gameObject.CompareTag("Fish2"))
         {
-            granny.GetComponent<Granny_Behavior>().wrongFish();
-            granny.GetComponent<Granny_Behavior>().disappearFish();
+            granny.GetComponent<Granny_Behavior>().Clap3(3);
         }
     }
 

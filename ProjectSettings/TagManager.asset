@@ -8,10 +8,10 @@ TagManager:
   - right
   - left
   - head
-  - Salmon3
   - stoparea
   - Fish1
   - Fish2
+  - salmon2
   layers:
   - Default
   - TransparentFX

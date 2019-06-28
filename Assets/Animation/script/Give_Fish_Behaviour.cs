@@ -15,13 +15,13 @@ public class Give_Fish_Behaviour : StateMachineBehaviour {
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if ((Time.time - starttime) > 4.25 && !callonce)
+        if ((Time.time - starttime) > 4.25f && !callonce)
         {
             callonce = true;
             animator.GetComponent<Granny_Behavior>().dropfish(1);
         }
 
-        if ((Time.time - starttime) > 5.25 && !calltwice)
+        if ((Time.time - starttime) > 5.25f && !calltwice)
         {
             calltwice = true;
             animator.GetComponent<Granny_Behavior>().dropfish(2);

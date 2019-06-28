@@ -33,7 +33,7 @@ public class Fish_Gameobject_Behaviour : MonoBehaviour
         {
             transform.position = Vector3.Lerp(transform.position, pos.position, Time.deltaTime * 0.4f);
             transform.rotation = Quaternion.Lerp(transform.rotation, rot, 0.4f * Time.deltaTime);
-            if (Vector3.Distance(transform.position, pos.position) < .04f)
+            if (Vector3.Distance(transform.position, pos.position) < .4f)
             {
                 movedown = false;
             }
@@ -42,7 +42,7 @@ public class Fish_Gameobject_Behaviour : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, pos2, Time.deltaTime * 0.85f);
             transform.rotation = Quaternion.Lerp(transform.rotation, rot, 0.4f * Time.deltaTime);
-            if (Vector3.Distance(transform.position, pos2) < 1f)
+            if (Vector3.Distance(transform.position, pos2) < .4f)
                 ismoveforward = false;
         }
 
