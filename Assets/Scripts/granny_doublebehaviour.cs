@@ -21,7 +21,7 @@ public class granny_doublebehaviour : MonoBehaviour {
 
     IEnumerator CloseScreen()
     {
-        yield return new WaitForSeconds(30f);
+        yield return new WaitForSeconds(18f);
         closecove.GetComponent<startscreen>().closescreen();
     }
 }
