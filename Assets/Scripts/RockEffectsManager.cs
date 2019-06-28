@@ -7,6 +7,7 @@ public class RockEffectsManager : MonoBehaviour {
     public MusicRock rock;
     public Light light;
     public ParticleSystem ps;
+    public AudioSource startSound;
     public ParticleSystem attentionParticles;
     public ParticleSystem fishSystem;
     public GameObject symbolMat;
@@ -20,8 +21,8 @@ public class RockEffectsManager : MonoBehaviour {
 
     [Header("ColorFadeSpeeds")]
     public float colorDeactivteFadeSpeed = 0.25f;
-    public float colorActivateFadeSpeed = 0.25f;
-    public float colorSelectedFadeSpeed = 0.5f;
+    public float colorActivateFadeSpeed = 0.75f;
+    public float colorSelectedFadeSpeed = 0.57f;
     public float colorDeselectedFadeSpeed = 1.5f;
 
     [Header("Activation Angle Settings")]
@@ -49,13 +50,15 @@ public class RockEffectsManager : MonoBehaviour {
     }
 
     void Select() {
-        light.intensity *= 2;
+        // light.intensity *= 8;
+        light.intensity = 23;
         Material mat = symbolMat.GetComponent<Renderer>().material;
         fadeColor(selectedColor, colorSelectedFadeSpeed, true, false);
     }
 
     void Deselect() {
-        light.intensity /= 2;
+        // light.intensity /= 8;
+        light.intensity = 0;
         Material mat = symbolMat.GetComponent<Renderer>().material;
         fadeColor(baseColor, colorDeselectedFadeSpeed, true, false);
     }
@@ -125,7 +128,10 @@ public class RockEffectsManager : MonoBehaviour {
         }
         mat.SetColor("_EmissionColor", color);
 
-        if(bubble)
+        if (bubble)
+        {
             ps.Play();
+            startSound.Play();
+        }
     }
 }

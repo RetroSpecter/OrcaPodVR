@@ -43,7 +43,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Celebrate
-  m_Speed: 1
+  m_Speed: 1.6
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -8485005275827339286}
@@ -317,6 +317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetIndex: -1
   weight: 0
+  lookSwitch: 0
 --- !u!1109 &4241428402845977964
 AnimatorTransition:
   m_ObjectHideFlags: 1
@@ -394,6 +395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetIndex: -1
   weight: 0
+  lookSwitch: 0
 --- !u!114 &8446108398058935938
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -437,7 +439,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ScarletBeckon
-  m_Speed: 1
+  m_Speed: 1.65
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours:
