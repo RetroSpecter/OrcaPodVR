@@ -20,16 +20,14 @@ public class EatDetect : MonoBehaviour {
         if (other.gameObject.CompareTag("Fish"))
         {
             Debug.Log("Eaten");
-            granny_swim.GetComponent<Granny_Behavior>().chewing.Play();
             granny_swim.GetComponent<Granny_Behavior>().EatenAndCelebration();
             granny_swim.GetComponent<Granny_Behavior>().Clap2();
         }
         if (other.gameObject.CompareTag("Salmon3"))
         {
             Debug.Log("Eaten");
-            granny_swim.GetComponent<Granny_Behavior>().chewing.Play();
             granny_swim.GetComponent<Granny_Behavior>().EatenAndCelebration();
-            granny_swim.GetComponent<Granny_Behavior>().Clap3();
+            granny_swim.GetComponent<Granny_Behavior>().Clap3(1);
         }
     }
 
