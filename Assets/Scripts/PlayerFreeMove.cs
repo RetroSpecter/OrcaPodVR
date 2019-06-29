@@ -16,10 +16,13 @@ public class PlayerFreeMove : MonoBehaviour
     public GameObject VRCam, bubbles;
     public bool debug;
     public Transform ocean;
+
+    //public GameObject fogwalls;
     // The original waypoits are no longer used.
     
     public float collisionDistance;
     private float initialVignette;
+    private Collision TerrainCollision;
     // Where the player starts during *this* round
     private Vector3 startPoint;
     private bool prevWhaleReached;
@@ -70,6 +73,7 @@ public class PlayerFreeMove : MonoBehaviour
         if (transform.position.y > ocean.transform.position.y)
         {
             RenderSettings.fogDensity = 0;
+            //fogwalls.SetActive(false);
             bubbles.gameObject.SetActive(false);
             //if (gameObject.transform.position.y < ocean.transform.position.y + oceanOffset)
             //{
@@ -91,13 +95,40 @@ public class PlayerFreeMove : MonoBehaviour
             {
                 RenderSettings.fogDensity = 0.05f;
             }
+
+           // if (fogwalls.gameObject.activeSelf != true)
+           // {
+           //     fogwalls.SetActive(true);
+           // }
         }
         Mathf.Clamp(transform.position.y, -1000000000, ocean.transform.position.y + oceanOffset);
 
         post.profile.TryGetSettings(out VignetteLayer);
         VignetteLayer.intensity.value = initialVignette + move.magnitude / speed / 4;
-
-        player.position += move * speed * Time.deltaTime;
+        if (!willCollide(move))
+        {
+            player.position += move * speed * Time.deltaTime;
+        }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        TerrainCollision = collision;
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        TerrainCollision = null;
+    }
+
+    private bool willCollide(Vector3 dir)
+    {
+        if (TerrainCollision != null)
+        {
+            float cos = Vector3.Dot(dir.normalized, (TerrainCollision.GetContact(0).point - transform.position).normalized);
+            return cos > 0;
+        }
+        return false;
+
+    }
 }
