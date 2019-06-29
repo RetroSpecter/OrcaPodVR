@@ -24,14 +24,14 @@ public class Granny_Behavior : MonoBehaviour
     public AudioSource celebration;
     public AudioSource chewing;
 
-    int countFish;
+
     Animator aniamtor;
     readonly int gofishHash = Animator.StringToHash("fish_trigger");
     readonly int wave = Animator.StringToHash("sayHi_trigger");
     readonly int clap_t = Animator.StringToHash("clap_trigger");
     readonly int moveme = Animator.StringToHash("moveme");
     readonly int correct_fish = Animator.StringToHash("correct");
-    readonly int allDone = Animator.StringToHash("allDone");
+    readonly int wrong_fish = Animator.StringToHash("wrong");
     float interim_time;
     bool isforward = false, isplayer = false;
     void Start()
@@ -53,7 +53,7 @@ public class Granny_Behavior : MonoBehaviour
         if (isforward)
         {
             transform.position = Vector3.Lerp(transform.position, Camera.position, Time.deltaTime * 0.25f);
-            if (Vector3.Distance(transform.position, Camera.position) < 6.3f )
+            if (Vector3.Distance(transform.position, Camera.position) < 5.8f )
             {
                 Debug.Log(Vector3.Distance(transform.position, Camera.position));
                 isforward = false;
@@ -66,37 +66,21 @@ public class Granny_Behavior : MonoBehaviour
         return fishpos.position;
     }
 
-    public void Clap3(int fish)
-    {
-        switch (fish)
-        {
-            case 1:
-                salmon_3.SetActive(false);
-                countFish++;
-                break;
-            case 2:
-                round_fish.SetActive(false);
-                countFish++;
-                break;
-            case 3:
-                will_fish.SetActive(false);
-                countFish++;
-                break;
-        }
-        
-        isplayer = true;
-        fishbones_burp();
-
-        aniamtor.SetTrigger(correct_fish);
-        if (countFish >= 3)
-            aniamtor.SetTrigger(allDone);
-    }
-
     public void Clap2()
     {
         salmon_2.SetActive(false);
+        fish_st = FishState.EATEN;
+        isplayer = true;
         fishbones_burp();
         aniamtor.SetTrigger(clap_t);
+    }
+
+    public void Clap3()
+    {
+        salmon_3.SetActive(false);
+        fish_st = FishState.EATEN;
+        fishbones_burp();
+        aniamtor.SetTrigger(correct_fish);
     }
 
     IEnumerator GoFish()
@@ -132,8 +116,6 @@ public class Granny_Behavior : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         fishbones_player.GetComponent<Fishbones_behaviour>().Slideout();
-        chewing.Play();
-
     }
 
     public void SwimOver()
@@ -143,6 +125,28 @@ public class Granny_Behavior : MonoBehaviour
         grannyBreath.Play();
         grannyBubbleSound.Play();
         StartCoroutine("Wave");
+    }
+
+    public void wrongFish()
+    {
+        aniamtor.SetTrigger(wrong_fish);
+    }
+    public void burstFish()
+    {
+        round_fish.SetActive(false);
+        burst.Play();
+    }
+
+    public void disappearFish()
+    {
+        will_fish.GetComponent<Fish_Gameobject_Behaviour>().scalechange();
+        will_fish.gameObject.SetActive(false);
+    }
+
+    public void playheart()
+    {
+        //heart.SetActive(true);
+        //gameObject.SetActive(false);
     }
 
     public void playpod()
@@ -189,11 +193,7 @@ public class Granny_Behavior : MonoBehaviour
     public void fishbones_burp()
     {
         if (!isplayer)
-        {
             fishbones.GetComponent<Fishbones_behaviour>().Slideout();
-            chewing.Play();
-        }
-
         else
             StartCoroutine("Burp");
     }

@@ -29,7 +29,7 @@ public class EatDetect : MonoBehaviour {
             Debug.Log("Eaten");
             granny_swim.GetComponent<Granny_Behavior>().chewing.Play();
             granny_swim.GetComponent<Granny_Behavior>().EatenAndCelebration();
-            granny_swim.GetComponent<Granny_Behavior>().Clap3(1);
+            granny_swim.GetComponent<Granny_Behavior>().Clap3();
         }
     }
 
