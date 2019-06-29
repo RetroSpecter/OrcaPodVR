@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/LoadingScreen.unity
     guid: a92d1da4f0201b54da3a82e5afba5b3d
+  - enabled: 1
+    path: Assets/Scenes/FreeSwim.unity
+    guid: 0c291aef1c03aac438e25c34c41fbc24
   m_configObjects: {}

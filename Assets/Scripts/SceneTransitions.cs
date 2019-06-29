@@ -42,7 +42,7 @@ public class SceneTransitions : MonoBehaviour
     }
 
     public void Transition() {
-        ScenesPlayed[SceneManager.GetActiveScene().buildIndex-1] = true;
+// ScenesPlayed[SceneManager.GetActiveScene().buildIndex-1] = true;
         StartCoroutine(LoadYourAsyncScene(0));
     }
 
