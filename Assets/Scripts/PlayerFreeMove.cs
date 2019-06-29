@@ -75,15 +75,11 @@ public class PlayerFreeMove : MonoBehaviour
             RenderSettings.fogDensity = 0;
             //fogwalls.SetActive(false);
             bubbles.gameObject.SetActive(false);
-            //if (gameObject.transform.position.y < ocean.transform.position.y + oceanOffset)
-            //{
-            Debug.Log(diff.y);
+            
             if (diff.y > 0 && transform.position.y >= ocean.transform.position.y + oceanOffset)
             {
                     move.y = 0;
-                   // Debug.Log(diff.y);
             }
-           //}
         } else
         {
             if (bubbles.gameObject.activeSelf != true)
@@ -111,24 +107,13 @@ public class PlayerFreeMove : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        TerrainCollision = collision;
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        TerrainCollision = null;
-    }
-
     private bool willCollide(Vector3 dir)
     {
-        if (TerrainCollision != null)
-        {
-            float cos = Vector3.Dot(dir.normalized, (TerrainCollision.GetContact(0).point - transform.position).normalized);
-            return cos > 0;
-        }
-        return false;
+        int layerMask = 1 << 9;
+        
+        RaycastHit hit;
+
+        return (Physics.Raycast(transform.position, dir, out hit, collisionDistance, layerMask));
 
     }
 }
