@@ -8,7 +8,7 @@ public class startscreen : MonoBehaviour
     // Use this for initialization
 
     public Material mat;
-    public GameObject granny, paticlesFXW, particle_white, particle_2, headInteaction, pod, grannyDouble;
+    public GameObject granny, paticlesFXW, particle_white, particle_2, headInteaction, pod, grannyDouble, text,stfish;
     float disolve = -1f;
     bool open = false, close = false;
     void Start()
@@ -45,6 +45,8 @@ public class startscreen : MonoBehaviour
                 paticlesFXW.SetActive(true);
                 particle_white.SetActive(true);
                 headInteaction.GetComponent<Player_GazeInteraction>().enabled = true;
+                text.SetActive(true);
+                stfish.SetActive(true);
             }
         }
 

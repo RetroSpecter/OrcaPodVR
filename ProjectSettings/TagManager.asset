@@ -13,6 +13,9 @@ TagManager:
   - Fish2
   - salmon2
   - Water Volume
+  - startFish
+  - fishschool
+  - freefish
   layers:
   - Default
   - TransparentFX

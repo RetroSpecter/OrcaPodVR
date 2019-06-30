@@ -53,7 +53,7 @@ public class Granny_Behavior : MonoBehaviour
         if (isforward)
         {
             transform.position = Vector3.Lerp(transform.position, Camera.position, Time.deltaTime * 0.25f);
-            if (Vector3.Distance(transform.position, Camera.position) < 5.8f )
+            if (Vector3.Distance(transform.position, Camera.position) < 6.0f )
             {
                 Debug.Log(Vector3.Distance(transform.position, Camera.position));
                 isforward = false;

@@ -8,6 +8,7 @@ public class GrabScript : MonoBehaviour
     //private bool rightHandtouched = false;
     //private bool leftHandtouched = false;
     public GameObject righthand,lefthand, granny;
+    [SerializeField] float haptic_frequency=0.25f, haptic_amplitutde=0.25f;
     GameObject fish;
     // Use this for initialization
     void Start()
@@ -42,16 +43,15 @@ public class GrabScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
         if (other.gameObject.tag == "right")
         {
            transform.SetParent(other.transform);
-            OVRInput.SetControllerVibration(1, 1, OVRInput.Controller.RTouch);
+           OVRInput.SetControllerVibration(haptic_frequency, haptic_amplitutde, OVRInput.Controller.RTouch);
         }
         else if(other.gameObject.CompareTag("left"))
         {
             transform.SetParent(lefthand.transform);
-            OVRInput.SetControllerVibration(1, 1, OVRInput.Controller.LTouch);
+            OVRInput.SetControllerVibration(haptic_frequency, haptic_amplitutde, OVRInput.Controller.LTouch);
         }
         else if (other.gameObject.CompareTag("head"))
         {

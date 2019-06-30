@@ -12,7 +12,7 @@ public class Player_GazeInteraction : MonoBehaviour {
     [SerializeField] private float m_RayLength = 500f;                  // How far into the scene the ray is cast.
     [SerializeField] private Transform granny;
     [SerializeField] private Transform granny_endpt;
-
+    bool nofish = false;
     bool haslooked = false, isRotate = false;
     public static bool callonce = false;
     private VRInteractiveItem m_CurrentInteractible;                //The current interactive item
@@ -33,6 +33,11 @@ public class Player_GazeInteraction : MonoBehaviour {
 	void Update () {
         GazeIntercation();
 	}
+
+    public void setNoFish()
+    {
+        nofish = true;
+    }
 
     public void GazeIntercation()
     {
@@ -63,7 +68,7 @@ public class Player_GazeInteraction : MonoBehaviour {
             VRInteractiveItem interactible = hit.collider.GetComponent<VRInteractiveItem>(); //attempt to get the VRInteractiveItem on the hit object
             m_CurrentInteractible = interactible;
 
-            if (hit.collider.name == granny.name)
+            if (hit.collider.name == granny.name && nofish)
             {
                 if (!haslooked)
                 {

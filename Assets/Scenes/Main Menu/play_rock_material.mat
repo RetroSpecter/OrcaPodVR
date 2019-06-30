@@ -95,5 +95,5 @@ Material:
     - Color_F5E34D26: {r: 0.509434, g: 0.48300105, b: 0.48300105, a: 0}
     - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-    - _EmissionColor: {r: 0.8679245, g: 0, b: 0.6875322, a: 1}
+    - _EmissionColor: {r: 1, g: 0, b: 0.6459122, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}

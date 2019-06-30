@@ -9,13 +9,15 @@ public class VisibilityFreeSwim : VisiblityManager
     {
         if (AreAllComplete())
         {
-            foreach (GameObject o in objects)
-                o.SetActive(true);
+            objects[0].SetActive(false);
+            objects[1].SetActive(true);
         }
         else
         {
-            foreach (GameObject o in objects)
-                o.SetActive(false);
+            objects[0].SetActive(true);
+            objects[1].SetActive(false);
+            // foreach (GameObject o in objects)
+            //   o.SetActive(false);
         }
     }
 }

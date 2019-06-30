@@ -19,8 +19,8 @@ public class RockEffectsManager : MonoBehaviour {
     IEnumerator curFadeColor;
 
     [Header("ColorFadeSpeeds")]
-    public float colorDeactivteFadeSpeed = 0.25f;
-    public float colorActivateFadeSpeed = 0.25f;
+    public float colorDeactivteFadeSpeed = 0.75f;
+    public float colorActivateFadeSpeed = 0.75f;
     public float colorSelectedFadeSpeed = 0.5f;
     public float colorDeselectedFadeSpeed = 1.5f;
 
@@ -49,13 +49,13 @@ public class RockEffectsManager : MonoBehaviour {
     }
 
     void Select() {
-        light.intensity *= 2;
+        light.intensity = 40f;
         Material mat = symbolMat.GetComponent<Renderer>().material;
         fadeColor(selectedColor, colorSelectedFadeSpeed, true, false);
     }
 
     void Deselect() {
-        light.intensity /= 2;
+        light.intensity =0;
         Material mat = symbolMat.GetComponent<Renderer>().material;
         fadeColor(baseColor, colorDeselectedFadeSpeed, true, false);
     }

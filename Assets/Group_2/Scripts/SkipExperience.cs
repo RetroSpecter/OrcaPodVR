@@ -26,7 +26,7 @@ public class SkipExperience : MonoBehaviour
             time = 0;
         }
 
-        if (time > 3)
+        if (time > 1f)
         {
             time = -99;
             StartCoroutine(endGame(1.5f));    

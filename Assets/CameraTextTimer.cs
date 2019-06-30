@@ -18,8 +18,10 @@ public class CameraTextTimer : MonoBehaviour
     void Update()
     {
         disappearTime -= Time.deltaTime;
-        if(disappearTime<0)
+        if (disappearTime < 0)
+        {
             text.SetActive(false);
+        }
 
     }
 }
