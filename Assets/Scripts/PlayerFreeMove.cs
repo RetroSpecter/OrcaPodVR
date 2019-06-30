@@ -16,8 +16,9 @@ public class PlayerFreeMove : MonoBehaviour
     public GameObject VRCam, bubbles;
     public bool debug;
     public Transform ocean;
+    //public GameObject shadowMesh;
 
-    //public GameObject fogwalls;
+    public GameObject fogwalls;
     // The original waypoits are no longer used.
     
     public float collisionDistance;
@@ -73,7 +74,7 @@ public class PlayerFreeMove : MonoBehaviour
         if (transform.position.y > ocean.transform.position.y)
         {
             RenderSettings.fogDensity = 0;
-            //fogwalls.SetActive(false);
+            fogwalls.SetActive(false);
             bubbles.gameObject.SetActive(false);
             
             if (diff.y > 0 && transform.position.y >= ocean.transform.position.y + oceanOffset)
@@ -92,10 +93,10 @@ public class PlayerFreeMove : MonoBehaviour
                 RenderSettings.fogDensity = 0.05f;
             }
 
-           // if (fogwalls.gameObject.activeSelf != true)
-           // {
-           //     fogwalls.SetActive(true);
-           // }
+           if (fogwalls.gameObject.activeSelf != true)
+           {
+                fogwalls.SetActive(true);
+           }
         }
         Mathf.Clamp(transform.position.y, -1000000000, ocean.transform.position.y + oceanOffset);
 

@@ -98,7 +98,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 112000000, guid: 0897fb9cbbd5b7140a3333cab9309800,
     type: 2}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2022,7 +2022,7 @@ GameObject:
   - component: {fileID: 38732376}
   - component: {fileID: 38732379}
   - component: {fileID: 38732378}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: node_id35 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2434,7 +2434,7 @@ GameObject:
   - component: {fileID: 52699560}
   - component: {fileID: 52699563}
   - component: {fileID: 52699562}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: node_id30 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3248,7 +3248,7 @@ GameObject:
   - component: {fileID: 78447180}
   - component: {fileID: 78447183}
   - component: {fileID: 78447182}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: node_id35 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37491,7 +37491,7 @@ GameObject:
   - component: {fileID: 887711694}
   - component: {fileID: 887711693}
   - component: {fileID: 887711695}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: node_id35 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37569,7 +37569,7 @@ MeshCollider:
   m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
-  m_CookingOptions: 8
+  m_CookingOptions: 14
   m_Mesh: {fileID: 4300004, guid: cabe7ce727356fa4e8b9500e3da8e5af, type: 3}
 --- !u!1 &889369239
 GameObject:
@@ -43066,7 +43066,7 @@ GameObject:
   - component: {fileID: 1031254452}
   - component: {fileID: 1031254455}
   - component: {fileID: 1031254454}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: node_id35 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56727,7 +56727,7 @@ GameObject:
   - component: {fileID: 1445560928}
   - component: {fileID: 1445560931}
   - component: {fileID: 1445560930}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: node_id30 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60766,7 +60766,7 @@ GameObject:
   - component: {fileID: 1529236263}
   - component: {fileID: 1529236266}
   - component: {fileID: 1529236265}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: node_id35 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66255,7 +66255,7 @@ GameObject:
   - component: {fileID: 1616323680}
   - component: {fileID: 1616323683}
   - component: {fileID: 1616323682}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: node_id35 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75026,6 +75026,12 @@ Transform:
   m_Father: {fileID: 1048049493}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1884886096 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2466932785153409891, guid: 15ab5b77374042d4991fb01b8bede86a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1944818294}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1889098304
 GameObject:
   m_ObjectHideFlags: 0
@@ -76074,7 +76080,7 @@ PrefabInstance:
         type: 3}
       propertyPath: fogwalls
       value: 
-      objectReference: {fileID: 1212346904}
+      objectReference: {fileID: 1884886096}
     - target: {fileID: 2466932785304925350, guid: 15ab5b77374042d4991fb01b8bede86a,
         type: 3}
       propertyPath: collisionDistance
@@ -77232,7 +77238,7 @@ GameObject:
   - component: {fileID: 2019163934}
   - component: {fileID: 2019163937}
   - component: {fileID: 2019163936}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: node_id30
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77798,7 +77804,7 @@ GameObject:
   - component: {fileID: 2042502025}
   - component: {fileID: 2042502028}
   - component: {fileID: 2042502027}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: node_id35 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79414,7 +79420,7 @@ GameObject:
   - component: {fileID: 2080131061}
   - component: {fileID: 2080131064}
   - component: {fileID: 2080131063}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: node_id30
   m_TagString: Untagged
   m_Icon: {fileID: 0}
