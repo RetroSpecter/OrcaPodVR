@@ -49,7 +49,6 @@ public class FreeSwimRock : VolumeRock
                 CurMonitorVolume = null;
             }
         }
-
     }
 
     // what happens when the rock successfully is used

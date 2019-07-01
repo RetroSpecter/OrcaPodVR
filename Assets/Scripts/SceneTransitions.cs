@@ -7,7 +7,6 @@ public class SceneTransitions : MonoBehaviour
 {
 
     public static SceneTransitions instance;
-    public bool[] ScenesPlayed;
     void Awake() {
         if (instance == null)
         {
@@ -17,8 +16,6 @@ public class SceneTransitions : MonoBehaviour
         else {
             Destroy(this.gameObject);
         }
-
-        ScenesPlayed = new bool[3]; //Granny, Scarlet, Tahlequah
     }
 
     void Update()
@@ -42,17 +39,11 @@ public class SceneTransitions : MonoBehaviour
     }
 
     public void Transition() {
-// ScenesPlayed[SceneManager.GetActiveScene().buildIndex-1] = true;
+        // ScenesPlayed[SceneManager.GetActiveScene().buildIndex-1] = true;
         StartCoroutine(LoadYourAsyncScene(0));
     }
 
     public void Transition(string name) {
-        /*if (name == "Granny")
-            ScenesPlayed[0] = true;
-        else if(name == "Scarlet")
-            ScenesPlayed[1] = true;
-        else if(name == "Tahlequah")
-            ScenesPlayed[2] = true;*/
         StartCoroutine(LoadYourAsyncScene(name));
     }
 

@@ -16,21 +16,15 @@ public class VisiblityManager : MonoBehaviour
             foreach (GameObject o in objects)
                 o.SetActive(true);
         }
-        else {
+        else
+        {
             foreach (GameObject o in objects)
                 o.SetActive(false);
         }
     }
 
-    public virtual bool IsExperienceComplete(int index) {
-        return SceneTransitions.instance.ScenesPlayed[index];
-    }
-
-    public virtual bool AreAllComplete()
+    public virtual bool IsExperienceComplete(int index)
     {
-        foreach (bool b in SceneTransitions.instance.ScenesPlayed)
-            if (!b)
-                return false;
-        return true;
+        return ScenePlayed.Scenesstate[index];
     }
 }

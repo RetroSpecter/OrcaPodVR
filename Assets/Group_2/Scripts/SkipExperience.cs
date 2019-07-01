@@ -17,7 +17,7 @@ public class SkipExperience : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (OVRInput.Get(OVRInput.Button.Two) || Input.GetKey("space"))
+        if (OVRInput.Get(OVRInput.Button.Two) || Input.GetKey(KeyCode.S))
         {
             time += Time.deltaTime;
             print("xxx");
@@ -26,10 +26,10 @@ public class SkipExperience : MonoBehaviour
             time = 0;
         }
 
-        if (time > 1f)
+        if (time > 0.8f)
         {
             time = -99;
-            StartCoroutine(endGame(1.5f));    
+            StartCoroutine(endGame(0.2f));    
         }
 
         IEnumerator endGame(float delay)
