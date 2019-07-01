@@ -5,14 +5,16 @@ using UnityEngine;
 public class CatchFish : MonoBehaviour
 {
     [SerializeField] float haptic_frequency = 0.1f, haptic_amplitutde=0.1f;
-    [SerializeField] Transform fish;
+    [SerializeField] Transform fishL,fishR;
     [SerializeField] GameObject fishbones;
+    [SerializeField] Collider left, right;
     [SerializeField] AudioSource burp;
     bool readytoeat = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+        fishR.gameObject.SetActive(false);
+        fishL.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -23,31 +25,32 @@ public class CatchFish : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
         if (other.CompareTag("fishschool"))
         {
-            fish.gameObject.SetActive(true);
             if (gameObject.tag == "right")
             {
-                fish.SetParent(transform);
-                fish.transform.localPosition = Vector3.zero;
+                fishR.gameObject.SetActive(true);
                 OVRInput.SetControllerVibration(haptic_frequency, haptic_amplitutde, OVRInput.Controller.RTouch);
                 readytoeat = true;
+                left.enabled = false;
             }
-            else if (other.gameObject.CompareTag("left"))
+            if (gameObject.tag == "left")
             {
-                fish.SetParent(transform);
-                fish.transform.localPosition = Vector3.zero;
+                fishL.gameObject.SetActive(true);
                 OVRInput.SetControllerVibration(haptic_frequency, haptic_amplitutde, OVRInput.Controller.LTouch);
                 readytoeat = true;
+                right.enabled = false;
             }
         }
-        if (other.CompareTag("head") && readytoeat)
+        if (other.CompareTag("MainCamera") && readytoeat)
         {
-            fish.gameObject.SetActive(false);
+            fishR.gameObject.SetActive(false);
+            fishL.gameObject.SetActive(false);
             burp.Play();
             fishbones.GetComponent<Fishbones_behaviour>().Slideout();
             readytoeat = false;
+            left.enabled = true;
+            right.enabled = true;
         }
     }
 }

@@ -1445,7 +1445,7 @@ MonoBehaviour:
     value: 0.2
   roundness:
     overrideState: 1
-    value: 0
+    value: 0.75
   rounded:
     overrideState: 0
     value: 0

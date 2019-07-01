@@ -5,11 +5,8 @@ using UnityEngine;
 
 public class ExitNReload : MonoBehaviour {
 
-    float speed;
-    [SerializeField] private bool iskeyCamera;
 	// Use this for initialization
 	void Start () {
-        speed = 10f;
 	}
 	
 	// Update is called once per frame
@@ -22,17 +19,6 @@ public class ExitNReload : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
-        if (iskeyCamera)
-        {
-            if (Input.GetKey(KeyCode.RightArrow))
-            {
-                transform.Rotate(Vector3.up, speed * Time.deltaTime, Space.World);
-            }
-            if (Input.GetKey(KeyCode.LeftArrow))
-            {
-                transform.Rotate(Vector3.up, -1 * speed * Time.deltaTime, Space.World);
-            }
         }
     }
 }

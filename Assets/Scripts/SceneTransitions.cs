@@ -47,15 +47,12 @@ public class SceneTransitions : MonoBehaviour
     }
 
     public void Transition(string name) {
-        print(name);
-        if (name == "Granny")
+        /*if (name == "Granny")
             ScenesPlayed[0] = true;
         else if(name == "Scarlet")
             ScenesPlayed[1] = true;
         else if(name == "Tahlequah")
-            ScenesPlayed[2] = true;
-        else
-            ScenesPlayed[3] = true;
+            ScenesPlayed[2] = true;*/
         StartCoroutine(LoadYourAsyncScene(name));
     }
 

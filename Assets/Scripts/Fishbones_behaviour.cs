@@ -22,10 +22,10 @@ public class Fishbones_behaviour : MonoBehaviour
     {
         if (movedown)
         {
-            transform.position = Vector3.Lerp(transform.position, pos.position, Time.deltaTime * 0.8f);
-            transform.localScale = transform.localScale + new Vector3(0.01f, 0.01f, 0.01f);
+            transform.position = Vector3.Lerp(transform.position, pos.position, Time.deltaTime * .8f);
+            transform.localScale = transform.localScale + new Vector3(0.1f, 0.1f, 0.1f);
             myrend.SetFloat(Shader.PropertyToID("Vector1_B7A3C04D"), dissolve_value);
-            dissolve_value += 0.01f;
+            dissolve_value += 0.1f;
         }
         if (dissolve_value > 2f)
         {
