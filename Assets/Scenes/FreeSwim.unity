@@ -81227,6 +81227,11 @@ PrefabInstance:
       propertyPath: near clip plane
       value: 0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 2466932786055574695, guid: 15ab5b77374042d4991fb01b8bede86a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2466932785584499018, guid: 15ab5b77374042d4991fb01b8bede86a,
         type: 3}
       propertyPath: m_Enabled
@@ -81262,6 +81267,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2466932784404477676, guid: 15ab5b77374042d4991fb01b8bede86a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2466932784404477665, guid: 15ab5b77374042d4991fb01b8bede86a,
+        type: 3}
+      propertyPath: near clip plane
+      value: 0.01
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2466932785304925346, guid: 15ab5b77374042d4991fb01b8bede86a, type: 3}
     - {fileID: 2466932786035428197, guid: 15ab5b77374042d4991fb01b8bede86a, type: 3}
@@ -81269,6 +81284,7 @@ PrefabInstance:
     - {fileID: 2466932785824986398, guid: 15ab5b77374042d4991fb01b8bede86a, type: 3}
     - {fileID: 2466932785584499125, guid: 15ab5b77374042d4991fb01b8bede86a, type: 3}
     - {fileID: 2466932784476417562, guid: 15ab5b77374042d4991fb01b8bede86a, type: 3}
+    - {fileID: 2466932784404477667, guid: 15ab5b77374042d4991fb01b8bede86a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 15ab5b77374042d4991fb01b8bede86a, type: 3}
 --- !u!1 &1944818295 stripped
 GameObject:
