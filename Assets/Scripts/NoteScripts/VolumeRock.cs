@@ -115,7 +115,6 @@ public class VolumeRock : MonoBehaviour
         yield return StartCoroutine(GetSoundLength(volumeThreshold, value => t = value));
 
         if (t + lengthError > voiceLength) {
-            print("made it");
             PlayRock();
         } else if ((t / voiceLength) > 0.2f && AnimatorHandler.instance != null) {
             AnimatorHandler.instance.ActivateTriggers("try again");

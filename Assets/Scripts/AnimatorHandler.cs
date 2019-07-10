@@ -37,9 +37,9 @@ public class AnimatorHandler : MonoBehaviour {
         StartCoroutine(resetTrigger(triggerName));
     }
 
-    //public void reset() {
-      //  SceneTransitions.instance.Transition();
-    //}
+    public void reset() {
+        SceneTransitions.instance.Transition();
+    }
 
     IEnumerator resetTrigger(string triggerName) {
         yield return new WaitForSeconds(0.5f);
