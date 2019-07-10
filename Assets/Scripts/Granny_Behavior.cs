@@ -163,8 +163,8 @@ public class Granny_Behavior : MonoBehaviour
         grannydouble.transform.rotation = gameObject.transform.rotation;
         gameObject.SetActive(false);
         grannydouble.SetActive(true);
-        fish_particle.Stop();
-        fish_particle.gameObject.SetActive(false);
+        //fish_particle.Stop();
+       // fish_particle.gameObject.SetActive(false);
     }
     /****************
         PARTICLES
