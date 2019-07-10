@@ -17,22 +17,13 @@ public class textstart : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if(Time.deltaTime-time > 6f)
-        //{
-        //    ismoveforward = true;
-        //}
-        //if(ismoveforward)
-        //{
-        //    transform.position = Vector3.MoveTowards(transform.position, head.transform.position, Time.deltaTime * 0.85f);
-        //    if (Vector3.Distance(transform.position, head.transform.position) < .4f)
-        //        ismoveforward = false;
-        //}
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.gameObject.tag == "right")
+        if (other.gameObject.CompareTag("right"))
         {
             if(checkfish())
             OVRInput.SetControllerVibration(haptic_frequency, haptic_amplitutde, OVRInput.Controller.RTouch);

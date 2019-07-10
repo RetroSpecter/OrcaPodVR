@@ -43,9 +43,9 @@ public class GrabScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "right")
+        if (other.gameObject.CompareTag("right"))
         {
-           transform.SetParent(other.transform);
+           transform.SetParent(righthand.transform);
            OVRInput.SetControllerVibration(haptic_frequency, haptic_amplitutde, OVRInput.Controller.RTouch);
         }
         else if(other.gameObject.CompareTag("left"))
